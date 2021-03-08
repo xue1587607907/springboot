@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sql转存储过程</title>
+</head>
+<body>
+<div style="display:flex;flex-wrap:wrap;margin: 200px auto;justify-content: space-between">
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                新增索引
+            </span>
+                </div>
+            </h3>
+
+            <form action="addIndex" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">索引名:<input type="text" name="indexName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                修改索引名称
+            </span>
+                </div>
+            </h3>
+
+            <form action="modifyIndexName" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">旧索引名:<input type="text" name="indexName"/></div>
+                <div  style="text-align: right">新索引名:<input type="text" name="newIndexName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                删除索引
+            </span>
+                </div>
+            </h3>
+
+            <form action="dropIndex" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">索引名:<input type="text" name="indexName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                新增字段
+            </span>
+                </div>
+            </h3>
+
+            <form action="addTableField" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">字段名:<input type="text" name="columnName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                修改字段属性
+            </span>
+                </div>
+            </h3>
+
+            <form action="modifyTableField" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">字段名:<input type="text" name="columnName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                删除字段
+            </span>
+                </div>
+            </h3>
+
+            <form action="dropColumn" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">字段名:<input type="text" name="columnName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                修改字段名称
+            </span>
+                </div>
+            </h3>
+
+            <form action="modifyTableFieldName" method="post">
+                <div  style="text-align: right">数据库名:<input type="text" name="tableSchema" value="elearning"/></div>
+                <div  style="text-align: right">表名:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">旧字段名:<input type="text" name="columnName"/></div>
+                <div  style="text-align: right">新字段名:<input type="text" name="newName"/></div>
+                <div style="text-align: right">
+                    要转换的sql语句:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div  style="width: 49%;text-align: center;border: 1px solid red;padding-bottom: 20px;">
+        <div style="width:300px;margin: 0 auto">
+            <h3 style="color: cornflowerblue">
+                <div style="text-align: center">
+            <span>
+                *************
+            </span>
+                </div>
+            </h3>
+
+            <form action="" method="post">
+                <div  style="text-align: right">xxxxx:<input type="text" name="tableSchema"/></div>
+                <div  style="text-align: right">xxxxx:<input type="text" name="tableName"/></div>
+                <div  style="text-align: right">xxxxx:<input type="text" name="columnName"/></div>
+                <div  style="text-align: right">xxxxx:<input type="text" name="newName"/></div>
+                <div  style="text-align: right">
+                    xxxxx:<input type="text" name="sql"/>
+                </div>
+                <div  style="text-align: center;margin-top: 20px;">
+                    <input type="submit" value="转换" style="border: 0;background-color: #409eff;border-color:#409eff;cursor:pointer;color:#FFFFFF;width:70px;padding:5px 0;border-radius:4px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
